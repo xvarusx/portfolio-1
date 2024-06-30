@@ -1,0 +1,17 @@
+#
+# Extension Configuration template
+#
+FrontEndConfigurations{
+    # cat=FrontEndConfigurations; type=string; label=Logo: If set, this logo will be used instead of... (e.g. fileadmin/images/login-logo.png or EXT:my_theme/Resources/Public/Images/login-logo.png or //domain.tld/login-logo.png).
+    websiteLogo = 
+    # cat=Phone; type=string; label=Phone
+    phone = 
+    # cat=Email; type=string; label=Email
+    email = 
+    # cat=address; type=string; label=Address
+    address = 
+}
+BackendConfigurations {
+    # cat=BackendConfigurations; type=string; label=Logo: If set, this logo will be used instead of... (e.g. fileadmin/images/login-logo.png or EXT:my_theme/Resources/Public/Images/login-logo.png or //domain.tld/login-logo.png).
+    extensionLogo = 
+}

@@ -1,0 +1,24 @@
+base: 'http://portfolio-1.0.test/'
+languages:
+  -
+    title: English
+    enabled: true
+    languageId: 0
+    base: /
+    locale: en_US.UTF-8
+    navigationTitle: English
+    flag: us
+  -
+    title: French
+    enabled: true
+    locale: fr_FR
+    hreflang: fr
+    base: /fr/
+    websiteTitle: ''
+    navigationTitle: french
+    fallbackType: strict
+    fallbacks: ''
+    flag: fr
+    languageId: 1
+rootPageId: 1
+websiteTitle: ''

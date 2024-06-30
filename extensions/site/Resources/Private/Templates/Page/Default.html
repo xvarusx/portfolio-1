@@ -1,0 +1,42 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+  xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers" xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers">
+<f:layout name="Page/Default" />
+
+<f:section name="Configuration">
+  <flux:form id="content" label="content">
+    <flux:form.sheet name="contact" label="Contact Us Button">
+      <flux:field.input name="csbutton" label="Contact Us Button" />
+      <flux:field.input name="linkcsb" label="Link target" config="{renderType: 'inputLink'}"></flux:field.input>
+    </flux:form.sheet>
+  </flux:form>
+
+  <flux:grid>
+    <f:comment>
+      Hauptbereich ist immer colPos=0 +---+-------+---+ | 1 | 2 | 3 |
+      +---+-------+---+ | 4 | 0 | 5 | +---+-------+---+ | 6 | 7 | 8 |
+      +---+-------+---+
+    </f:comment>
+    <flux:grid.row>
+      <flux:grid.column colPos="0" colspan="4" name="content" label="Main Content">
+      </flux:grid.column>
+    </flux:grid.row>
+  </flux:grid>
+</f:section>
+
+<f:section name="Preview"> </f:section>
+
+<f:section name="Main">
+<header>
+  <f:render partial="Header/Header" arguments="{_all}" />
+</header>  
+  <main>
+    <v:content.render column="0" />
+  </main>
+  <footer>
+    <f:render partial="Footer/Footer" arguments="{_all}" />
+  </footer>
+
+
+</f:section>
+
+</html>
