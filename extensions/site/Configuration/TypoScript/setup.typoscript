@@ -27,12 +27,12 @@ lib.language {
             NO {
                 doNotLinkIt = 1
                 linkWrap = <li class="not-active ">|</li>
-                stdWrap.override = DE || EN
+                stdWrap.override = EN || FR
                 stdWrap {
                     typolink {
                         parameter.data = page:uid
                         additionalParams = &L=0 || &L=1
-                        ATagParams =hreflang="de-DE" ||  hreflang="en-GB"
+                        ATagParams =hreflang="en-GB" ||  hreflang="fr-FR"
                         addQueryString = 1
                         addQueryString.exclude = L,id,no_cache
                         addQueryString.method = GET
@@ -193,7 +193,10 @@ config {
     concatenateCss = 0
 }
 plugin.tx_site {
-    settings{
+    settings {
+        uids {
+            HeaderMenu = 1 
+        }
         contact {
             phone = +216 54876671
             email = oussema.harrabi.pro@hotmail.com

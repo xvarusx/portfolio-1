@@ -1,0 +1,141 @@
+<f:comment>
+
+<nav class="navbar">
+    <div class="navbar_container">
+      <div class="logo">
+          
+      </div>
+  <div class="navbar_content">
+  <div class="left_side_content">
+      <div class="top_menu">
+          <div class="language_menu_container">
+              <f:cObject typoscriptObjectPath="lib.language" />
+          </div>
+      </div>
+      <div class="bottom_menu" id="menu">
+          <ul class="menu_list">
+            <v:menu as="menu" pageUid="{settings.uids.HeaderMenu}">     
+              <f:for each="{menu}" as="mainnavigationItem">
+                  <li class="{f:if(condition: mainnavigationItem.active, then:'active')} menu_link">
+                      <a href="{mainnavigationItem.link}" target="{mainnavigationItem.target}" title="{mainnavigationItem.title}">
+                          {mainnavigationItem.title}
+                      </a>
+                      <f:if condition="{mainnavigationItem.children}">
+                          <ul>
+                              <f:for each="{mainnavigationItem.children}" as="child">
+                                  <li class="{f:if(condition: child.active, then:'active')}">
+                                      <a href="{child.link}" target="{child.target}" title="{child.title}">
+                                          {child.title}
+                                      </a>
+                                  </li>
+                              </f:for>
+                          </ul>
+                      </f:if>
+                  </li>
+              </f:for>
+            </v:menu>
+          </ul>
+      </div>
+      <div class="humbarger">
+          <div class="bar"></div>
+          <div class="bar2 bar"></div>
+          <div class="bar"></div>
+      </div>
+      </div>
+  </div>
+  </div>
+  <div class="right_side_content">
+      <div class="custom-background">
+          <span class="right_side_content_text">ichwillfair<br>
+            <v:menu pageUid="{settings.uids.externalUrls}" as="menu">
+                    <f:for each="{menu}" as="page">
+                            <f:link.typolink parameter="{page.link}" class="right_side_content_link">
+                                {page.title}<i class="icon-url"></i>
+                            </f:link.typolink>
+                    </f:for>
+            </v:menu>
+            
+      </div>
+  </div>
+  </nav>
+</f:comment>
+<!-----menu ------------->
+    <nav class="navbar">
+        <div class="navbar_container">
+            <div class="text-logo">
+                <f:link.page pageUid="{settings.uids.HeaderMenu}">               
+                    <div class="logo-symbol">O</div>
+                    <div class="logo-text">Oussema <span>Harrabi</span></div>
+                </f:link.page>
+            </div>
+            <div class="humbarger">
+                <div class="bar"></div>
+                <div class="bar2 bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="menu" id="menu">
+                <ul class="menu_list">
+                  <v:menu as="menu" pageUid="{settings.uids.HeaderMenu}">     
+                    <f:for each="{menu}" as="mainnavigationItem">
+                        <li class="{f:if(condition: mainnavigationItem.active, then:'active')} menu_link">
+                            <a href="{mainnavigationItem.link}" target="{mainnavigationItem.target}" title="{mainnavigationItem.title}">
+                                {mainnavigationItem.title}
+                            </a>
+                            <f:if condition="{mainnavigationItem.children}">
+                                <ul>
+                                    <f:for each="{mainnavigationItem.children}" as="child">
+                                        <li class="{f:if(condition: child.active, then:'active')}">
+                                            <a href="{child.link}" target="{child.target}" title="{child.title}">
+                                                {child.title}
+                                            </a>
+                                        </li>
+                                    </f:for>
+                                </ul>
+                            </f:if>
+                        </li>
+                    </f:for>
+                  </v:menu>
+                </ul>
+                <div class="language_menu_container">
+                    <f:cObject typoscriptObjectPath="lib.language" />
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+  <f:comment>
+
+  <v:menu as="menu" pageUid="{settings.uids.HeaderMenu}">
+                        <f:for each="{menu}" as="mainnavigationItem" iteration="iteration">
+                            <f:if condition="{mainnavigationItem.hasSubPages}">
+                                <f:then>
+                                    <li class="nav-item dropdown">
+                                        <f:link.typolink class="nav-link dropdown-toggle active" parameter="{mainnavigationItem.uid}" additionalAttributes="{'data-bs-target':'#','data-bs-toggle':'dropdown','aria-haspopup':'true','aria-expanded':'false'}">
+                                            {mainnavigationItem.title}
+                                        </f:link.typolink>
+                                        <div class="dropdown-menu dropdown-menu-animated"
+                                             aria-labelledby="{mainnavigationItem.title}DropdownMenuLink">
+                                            <v:menu pageUid="{mainnavigationItem.uid}" expandAll="" entryLevel="2" as="subMenu">
+                                                <f:for each="{subMenu}" as="subPage">
+                                                    <f:link.typolink class="dropdown-item" parameter="{subPage.uid}" additionalAttributes="{'title':'{subPage.title}'}">
+                                                        {subPage.title}
+                                                    </f:link.typolink>
+                                                </f:for>
+                                            </v:menu>
+                                        </div>
+                                    </li>
+                                </f:then>
+                                <f:else>
+                                    <li class="nav-item">
+                                        <f:link.typolink class="nav-link active" parameter="{mainnavigationItem.uid}" additionalAttributes="{'title':'{subPage.title}'}">
+                                            {mainnavigationItem.title}
+                                        </f:link.typolink>
+                                    </li>
+                                </f:else>
+                            </f:if>
+                        </f:for>
+                    </v:menu>
+</f:comment>
