@@ -2,8 +2,8 @@
 // Variables
 // colors :
 $color_1 :#ffffff;
-$color_2 :linear-gradient(to right, #4458dc 0%, #854fee 100%), radial-gradient(circle at top left, #4458dc, #854fee);;
-$color_3 :#4458dc;;
+$color_2 :linear-gradient(to right, #4458dc 0%, #854fee 100%), radial-gradient(circle at top left, #4458dc, #854fee);
+$color_3 :#4458dc;
 $color_4 : #333333;
 $color_5 :#999999;
 
@@ -58,5 +58,26 @@ html {
   }
 .hide{
     display: none !important;
+}
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
 }
 

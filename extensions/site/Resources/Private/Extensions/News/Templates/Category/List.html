@@ -1,0 +1,117 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/Category/List.html
+-->
+
+<f:section name="content">
+	<f:if condition="{categories}">
+		<f:then>
+			<f:render section="categoryTree" arguments="{categories:categories,overwriteDemand:overwriteDemand}" />
+		</f:then>
+		<f:else>
+			<f:translate key="list_nocategoriesfound" />
+		</f:else>
+	</f:if>
+</f:section>
+
+<f:section name="categoryTree">
+	<f:if condition="{childrens}">
+		<f:then>
+			<f:for each="{categories}" as="category">
+			<f:if condition="{category.item.uid} == {overwriteDemand.categories}">
+					<f:then>
+						
+						<f:link.page title="{category.item.title}" class="active" pageUid="{settings.listPid}"
+							additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category.item.uid}}}">
+							<f:if condition="!{category.parent}">
+								<f:then>
+									<f:replace value="{category.item.title}" search="news" replace="All" />
+								</f:then>
+								<f:else>
+									{category.item.title}
+								</f:else>
+							</f:if>
+						</f:link.page>
+					</f:then>
+					<f:else>
+						<f:link.page title="{category.item.title}" pageUid="{settings.listPid}"
+							additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category.item.uid}}}">
+							<f:if condition="!{category.parent}">
+								<f:then>
+									<f:replace value="{category.item.title}" search="news" replace="All" />
+								</f:then>
+								<f:else>
+									{category.item.title}
+								</f:else>
+							</f:if>
+						</f:link.page>
+					</f:else>
+				</f:if>
+
+			<f:if condition="{category.children}">
+				<f:render section="categoryTree" arguments="{categories: category.children,overwriteDemand:overwriteDemand,childrens:'true'}" />
+				
+			</f:if>
+		</f:for>
+		</f:then>
+		<f:else>
+			<ul>
+				<header class="category_select-list ">
+					<h4 class="category_select-list__title">
+					<span class="category_select-list__titletext">Categories</span>
+					<svg  xmlns="http://www.w3.org/2000/svg" width="17.147" height="9.988"><path data-name="Path 19" d="m.707.707 7.866 7.866L16.44.707" fill="none" stroke="#04122d" stroke-width="2"></path></svg>
+					</h4>
+				</header>
+				<f:for each="{categories}" as="category">
+				
+					
+					<li class="category__list">
+						
+					
+						<f:if condition="{category.item.uid} == {overwriteDemand.categories}">
+							<f:then>
+								
+								<f:link.page title="{category.item.title}" class="active" pageUid="{settings.listPid}"
+									additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category.item.uid}}}">
+									<f:if condition="!{category.parent}">
+										<f:then>
+											<f:replace value="{category.item.title}" search="news" replace="All" />
+										</f:then>
+										<f:else>
+											{category.item.title}
+										</f:else>
+									</f:if>
+								</f:link.page>
+							</f:then>
+							<f:else>
+								<f:link.page title="{category.item.title}" pageUid="{settings.listPid}"
+									additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category.item.uid}}}">
+									<f:if condition="!{category.parent}">
+										<f:then>
+											<f:replace value="{category.item.title}" search="news" replace="All" />
+										</f:then>
+										<f:else>
+											{category.item.title}
+										</f:else>
+									</f:if>
+								</f:link.page>
+							</f:else>
+						</f:if>
+		
+					<f:if condition="{category.children}">
+						<f:render section="categoryTree" arguments="{categories: category.children,overwriteDemand:overwriteDemand,childrens:'true'}" />
+						
+					</f:if>
+					</li>
+				</f:for>
+			</ul>
+		</f:else>
+	</f:if>
+	
+</f:section>
+</html>

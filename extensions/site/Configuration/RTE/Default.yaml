@@ -1,42 +1,134 @@
+
+# Example of what CKEditor can all bring
+###
+
+# Load default processing options
 imports:
-    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
-    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
-    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+    - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Processing.yaml' }
+    - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml' }
+    - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml' }
+    - { resource: "EXT:rte_ckeditor_image/Configuration/RTE/Plugin.yaml" }
 
+# Add configuration for the editor
+# For complete documentation see https://ckeditor.com/docs/ckeditor5/latest/features/index.html
 editor:
-    config:
-        contentsCss: "EXT:site/Resources/Public/Css/rte.css"
+  config:
+    externalPlugins:
+       codesnippet:
+           resource: "EXT:site/Resources/Public/Ckeditor/codesnippet/"
+    style:
+      definitions:
+        # block level styles
+        - { name: 'Orange title H2', element: 'h2', classes: [], styles: { color: 'orange', background: 'blue' } }
+        - { name: 'Orange title H3', element: 'h3', classes: [], styles: { color: 'orange', background: 'blue' } }
+        - { name: 'Quote / Citation', element: 'blockquote', classes: [],  }
+        - { name: 'Code block', element: 'code', classes: [],  }
+        # Inline styles
+        - { name: 'Yellow marker', element: 'span', classes: [], styles: { background-color: 'yellow' } }
 
-        stylesSet:
-            - { name: "Lead", element: "p", attributes: { 'class': 'lead' } }
+    heading:
+      options:
+        - { model: 'paragraph', title: 'Paragraph' }
+        - { model: 'heading2', view: 'h2', title: 'Heading 2' }
+        - { model: 'heading3', view: 'h3', title: 'Heading 3' }
+        - { model: 'formatted', view: 'pre', title: 'Pre-Formatted Text' }
 
-        toolbarGroups:
-            - { name: styles, groups: [ format, styles ] }
-            - { name: basicstyles, groups: [ basicstyles ] }
-            - { name: paragraph, groups: [ list, indent, blocks, align ] }
-            - "/"
-            - { name: links, groups: [ links ] }
-            - { name: clipboard, groups: [ clipboard, cleanup, undo ] }
-            - { name: editing, groups: [ spellchecker ] }
-            - { name: insert, groups: [ insert ] }
-            - { name: tools, groups: [ table, specialchar ] }
-            - { name: document, groups: [ mode ] }
+    toolbar:
+      items:
+        - removeFormat
+        - undo
+        - redo
+        # grouping separator
+        - '|'
+        - findAndReplace
+        - link
+        - '|'
+        - insertTable
+        - tableColumn
+        - tableRow
+        - mergeTableCells
+        - TableProperties
+        - TableCellProperties
+        - '|'
+        - selectAll
+        - '|'
+        - sourceEditing
+        - showBlocks
+        - horizontalLine
+        # line break
+        - '-'
+        - bold
+        - italic
+        - underline
+        - strikethrough
+        - subscript
+        - superscript
+        - softhyphen
+        - '|'
+        - bulletedList
+        - numberedList
+        - blockQuote
+        - indent
+        - outdent
+        - alignment
+        - '|'
+        - specialCharacters
+        - '-'
+        - style
+        - heading
+        - fontFamily
+        - fontBackgroundColor
+        - fontColor
+        - fontSize
+        - '|'
+        - CodeBlock
+        - '|'
+        - 'widget'
 
-        format_tags: "p;h1;h2;h3;h4;h5;pre"
+    alignment:
+      options:
+        - { name: 'left', className: 'text-start' }
+        - { name: 'center', className: 'text-center' }
+        - { name: 'right', className: 'text-end' }
+        - { name: 'justify', className: 'text-justify' }
 
-        justifyClasses:
-            - text-left
-            - text-center
-            - text-right
-            - text-justify
+    table:
+      defaultHeadings: { rows: 1 }
+      contentToolbar:
+        - tableColumn
+        - tableRow
+        - mergeTableCells
+        - tableProperties
+        - tableCellProperties
+        - toggleTableCaption
 
-        extraPlugins:
-            - justify
+    fontColor:
+      colors:
+        - { label: 'Orange', color: '#ff8700' }
+        - { label: 'Blue', color: '#0080c9' }
+        - { label: 'Green', color: '#209d44' }
 
-        removePlugins:
-            - image
+    fontBackgroundColor:
+      colors:
+        - { label: 'Stage orange light', color: '#fab85c' }
 
-        removeButtons:
-            - Anchor
-            - Underline
-            - Strike
+    fontFamily:
+      options:
+        - 'default'
+        - 'Arial, sans-serif'
+
+    fontSize:
+      options:
+        - 'default'
+        - 18
+        - 21
+
+    importModules:
+      - { 'module': '@ckeditor/ckeditor5-font', 'exports': ['Font'] }
+      - { 'module': '@ckeditor/ckeditor5-show-blocks', 'exports': ['ShowBlocks'] }
+      - { 'module': '@ckeditor/ckeditor5-word-count', 'exports': ['WordCount'] }
+      - { 'module': '@ckeditor/ckeditor5-code-block', 'exports': ['CodeBlock'] }
+      - { 'module': '@ckeditor/ckeditor5-widget', 'exports': ['widget'] }
+
+    removePlugins: null
+

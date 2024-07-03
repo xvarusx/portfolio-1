@@ -193,6 +193,7 @@ config {
     concatenateCss = 0
 }
 plugin.tx_site {
+    mvc.callDefaultActionIfActionCantBeResolved = 1
     settings {
         uids {
             HeaderMenu = 1 
@@ -203,4 +204,22 @@ plugin.tx_site {
             address = sfax, Tunisia 
         }
     }
+}
+plugin.tx_news {
+	view {
+		templateRootPaths {
+			10 = EXT:site/Resources/Private/Extensions/News/Templates/
+			
+		}
+
+		partialRootPaths {
+			10 = EXT:site/Resources/Private/Extensions/News/Partials/
+		
+		}
+
+		layoutRootPaths {
+			10 = EXT:site/Resources/Private/Extensions/News/Layouts/
+			
+		}
+	}
 }
