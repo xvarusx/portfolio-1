@@ -1,6 +1,6 @@
 .frame-type-news_categorylist {
-    margin-top: 100px;
-    margin-bottom: 65px;
+    margin-top: 110px;
+    margin-bottom: 70px;
     header {
         h1{
             font-family: $font;
@@ -19,10 +19,15 @@
                 @media(min-width: map-get($devices-breakpoints,xl)){
                     display: none;
                 }
-                border: 1px solid #c8d4e3;
+                background-image: linear-gradient(#fff, #fff), radial-gradient(circle at top left, $color_4, $color_6);
+                border: 2px solid $color_6;
+                background-clip: border-box;
                 max-width: 203px;
                 padding: 10px 15px;
                 cursor: pointer;
+                @media(max-width: map-get($devices-breakpoints,sm)){
+                    max-width: 100%;
+                }
                 &.open{
                     svg{
                         transform: rotate(180deg);
@@ -51,10 +56,13 @@
                         display: flex !important;
                         flex-flow: column;
                         align-items: flex-start;
-                        border: 1px solid #c8d4e3;
+                        border: 1px solid $color_6;
                         max-width: 203px;
                         overflow-x: auto;
                         overflow-y: hidden;
+                    }
+                    @media(max-width: map-get($devices-breakpoints,sm)){
+                        max-width: 100%;
                     }
                     display: flex;
                     flex-flow: row nowrap;
@@ -96,7 +104,7 @@
                 a{
                     padding: 15px;
                     width: auto;
-                    color: #999;
+                    color: $color_5;
                     font-family: "Pathway Gothic One";
                     font-size: 30px;
                     font-weight: 400;

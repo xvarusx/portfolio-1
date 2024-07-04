@@ -1,0 +1,81 @@
+.frame-type-site_contactme{
+    overflow: hidden;
+    padding: 70px 0;
+    background-color: #f5f8fb;
+    margin-bottom: 110px;
+    header{
+        text-align: center;
+        margin-bottom: 45px;
+        @media (min-width: 992px) {
+            .headline-block {
+                margin-bottom: 35px;
+            }
+        }
+        h2{
+            font-family: $font;
+            font-weight: 400;
+            font-size: 42px;
+            margin-bottom: 25px;
+        }
+        h3{
+            font-weight: 300;
+            font-size: 38px;
+        }
+    }
+    .contactMe{
+        &__list{
+            display: flex;
+            flex-flow: row wrap;
+
+            .contact__box{
+                flex: 0 0 auto;
+                width:25%;
+                @media screen and (max-width : map-get($devices-breakpoints, lg)) {
+                    width: 50%;
+                }
+                @media screen and (max-width : map-get($devices-breakpoints, md)) {
+                    width: 100%;
+                }
+                .contact__content{
+                    padding: 0 15px 0 15px;
+                    border-radius: .5rem;
+                    .content-box{
+                        background-color: $color_1;
+                        padding: 20px 10px;
+                        text-align: center;
+                        box-shadow: 0 4px 6px rgba(174, 190, 205, .3);
+                        @media screen and (max-width : map-get($devices-breakpoints, lg)) {
+                            margin-bottom: 15px;
+                        }
+                        .contact__icons{
+                            background-color: #04b4e0;
+                            border-radius: 50%;
+                            width: 100px;
+                            height: 100px;
+                            display: flex;
+                            flex-flow: column;
+                            justify-content: center;
+                            align-items: center;
+                            margin: 0 auto;
+                            .icons{
+                                width:33px;
+                                height: 33px;
+                            } 
+                        }
+                        .contact__title{
+                                margin-top: 15px;
+                                a{
+                                    color: $color_4;
+                                    font-family: $font;
+                                    font-size : 18px;
+
+                                }
+                        }
+                }
+                }
+            }
+        }
+        
+
+    }
+}

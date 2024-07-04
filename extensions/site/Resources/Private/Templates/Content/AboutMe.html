@@ -1,0 +1,49 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+    xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+    xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+    xmlns:bak="http://typo3.org/ns/Softtodo/Package/ViewHelpers">
+<f:layout name="Page/Default" />
+<f:section name="Configuration">
+    <flux:form id="AboutMeSection" label="AboutMe" description="About Me Section">
+        <flux:field.input label="Header"name="header" maxCharacters="255" />
+        <flux:field.text label="Description"enableRichText="true" name="description" rows="5" cols="40" />
+        <flux:field.inline.fal name="image"  required="1"   minItems="0" label="image" collapseAll="true"
+        allowedExtensions="jpg,png,jfif,webp" />
+        <flux:field type="input" name="link"label="download-Cv-Link"config="{renderType: 'inputLink'}" />
+    </flux:form>
+</f:section>
+<f:section name="Preview">
+    {v:content.resources.fal(field: 'image', record: record) -> v:iterator.first() -> v:variable.set(name:'image')}
+    <f:if condition="{image}">
+        <f:image src="{image.url}"  class="preview-image" width="100" height="100" />
+    </f:if>
+</f:section>
+<f:section name="Main">
+    <section id="AboutMeSection">
+        {v:content.resources.fal(field: 'image') -> v:iterator.first() -> v:variable.set(name:'image')}
+        <div class="container">
+            <div class="aboutMe">
+                <div class="aboutMe__image">
+                    <div class="aboutMe__image-container">
+                        <f:if condition="{image}">
+                            <f:image treatIdAsReference="1" src="{image.id}" title="{image.title}" alt="{image.alternative}"/>
+                        </f:if>
+                    </div>
+                </div>
+                <div class="aboutMe__text">
+                    <div class="aboutMe__text-container">
+                        <div class="aboutMe__textleft">
+                            <h2>{header}</h2>
+                            {description -> f:format.html()}
+                            <f:link.typolink class="primary_btn"parameter="{link}" target="_blank" title="oussema harrabi cv">
+                               <span> Download </span>
+                            </f:link.typolink>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</f:section>
+
+</html>

@@ -1,0 +1,55 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+    xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+    xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+    xmlns:bak="http://typo3.org/ns/Softtodo/Package/ViewHelpers">
+<f:layout name="Page/Default" />
+<f:section name="Configuration">
+    <flux:form id="contactMeSection" label="ContactMeSection" description="Contact List">
+       
+        <flux:form.section name="contacts" label="Contact list">
+            <flux:form.object name="contact" label="Contact">
+                <flux:field.text enableRichText="false" name="ContactLabel" label="Contact Label" rows="1" cols="40" />
+                <flux:field.input name="image" label="image" config="{renderType: 'inputLink'}" />
+                <flux:field.input name="cantact-link" label="Contact link" config="{renderType: 'inputLink'}" />
+                <flux:field.text  enableRichText="false"name="ContactText" label="Contact Text"  rows="1" cols="50"/>
+            </flux:form.object>
+        </flux:form.section>
+    </flux:form>
+</f:section>
+<f:section name="Preview">
+    {v:content.resources.fal(field: 'image', record: record) -> v:iterator.first() -> v:variable.set(name:'image')}
+    <f:if condition="{image}">
+        <f:image src="{image.url}" treatIdAsReference="1" class="preview-image" width="100" height="100" />
+    </f:if>
+</f:section>
+<f:section name="Main">
+    <section id="contactMeSection" class="container">
+    <div class="contactMe">
+        <div class="contactMe__list">
+            <f:for each="{contacts}" as="contact">
+                <f:for each="{contact}" as="contact">
+                    <div class="contact__box">
+                        <div class="contact__content">
+                            <div class="content-box">
+                                <div class="contact__icons">
+                                    <f:image treatIdAsReference="1" src="{contact.image}" class="icons"/>
+                                </div>
+                                <h3 class="contact__title">
+                                    <f:link.typolink class ="contact_details"parameter="{contact.cantact-link}"target="_blank">{contact.ContactLabel}</f:link.typolink>
+
+                                </h3>
+                                <p>{contact.ContactText}</p>
+                          
+                        </div>
+                        </div>
+                    </div>
+                </f:for>
+            </f:for>
+        </div>
+    </div>
+    </section>
+
+
+</f:section>
+
+</html>

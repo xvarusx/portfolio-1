@@ -456,7 +456,9 @@ body > header .navbar_container .menu .language_menu_container .language-menu a 
 }
 
 .frame-type-news_newsliststicky {
-  margin-top: 100px;
+  margin-top: 70px;
+  overflow: hidden;
+  margin-bottom: 110px;
 }
 
 .frame-type-news_newsliststicky .news-header {
@@ -694,9 +696,141 @@ body > header .navbar_container .menu .language_menu_container .language-menu a 
   font-size: 12px;
 }
 
+#AboutMeSection {
+  background-color: #f5f8fb;
+}
+
+#AboutMeSection .aboutMe {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+#AboutMeSection .aboutMe__image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  max-width: 50%;
+}
+
+@media screen and (max-width: 576px) {
+  #AboutMeSection .aboutMe__image {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+#AboutMeSection .aboutMe__image img {
+  width: 100%;
+  height: auto;
+}
+
+#AboutMeSection .aboutMe__text {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  max-width: 50%;
+}
+
+@media screen and (max-width: 576px) {
+  #AboutMeSection .aboutMe__text {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+#AboutMeSection .aboutMe__text-container {
+  margin-bottom: 0;
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+#AboutMeSection .aboutMe__text-container h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 50px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 576px) {
+  #AboutMeSection .aboutMe__text-container h2 {
+    text-align: center;
+  }
+}
+
+#AboutMeSection .aboutMe__text-container p {
+  font-family: "Palanquin";
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+#AboutMeSection .aboutMe__text-container .primary_btn {
+  display: inline-block;
+  color: #ffffff;
+  letter-spacing: 0px;
+  font-family: "Palanquin", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 46px;
+  outline: none !important;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 5px;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  background-image: -webkit-gradient(linear, left top, right top, from(#333333), to(#854fee)), radial-gradient(circle at top left, #333333, #854fee);
+  background-image: linear-gradient(to right, #333333 0%, #854fee 100%), radial-gradient(circle at top left, #333333, #854fee);
+  border: double 2px transparent;
+  -webkit-box-shadow: 0px 10px 30px rgba(118, 85, 225, 0.3);
+          box-shadow: 0px 10px 30px rgba(118, 85, 225, 0.3);
+}
+
+@media screen and (max-width: 576px) {
+  #AboutMeSection .aboutMe__text-container .primary_btn {
+    width: 100%;
+  }
+}
+
+#AboutMeSection .aboutMe__text-container .primary_btn:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff)), radial-gradient(circle at top left, #333333, #854fee);
+  background-image: linear-gradient(#ffffff, #ffffff), radial-gradient(circle at top left, #333333, #854fee);
+  border: 2px solid #854fee;
+  color: #333333;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-clip: border-box;
+}
+
+#AboutMeSection .aboutMe__text-container .primary_btn span {
+  padding: 0 42px;
+}
+
 .frame-type-news_categorylist {
-  margin-top: 100px;
-  margin-bottom: 65px;
+  margin-top: 110px;
+  margin-bottom: 70px;
 }
 
 .frame-type-news_categorylist header h1 {
@@ -714,7 +848,10 @@ body > header .navbar_container .menu .language_menu_container .language-menu a 
 }
 
 .frame-type-news_categorylist .news ul .category_select-list {
-  border: 1px solid #c8d4e3;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff)), radial-gradient(circle at top left, #333333, #854fee);
+  background-image: linear-gradient(#fff, #fff), radial-gradient(circle at top left, #333333, #854fee);
+  border: 2px solid #854fee;
+  background-clip: border-box;
   max-width: 203px;
   padding: 10px 15px;
   cursor: pointer;
@@ -723,6 +860,12 @@ body > header .navbar_container .menu .language_menu_container .language-menu a 
 @media (min-width: 1200px) {
   .frame-type-news_categorylist .news ul .category_select-list {
     display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .frame-type-news_categorylist .news ul .category_select-list {
+    max-width: 100%;
   }
 }
 
@@ -785,10 +928,16 @@ body > header .navbar_container .menu .language_menu_container .language-menu a 
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
-    border: 1px solid #c8d4e3;
+    border: 1px solid #854fee;
     max-width: 203px;
     overflow-x: auto;
     overflow-y: hidden;
+  }
+}
+
+@media (max-width: 576px) {
+  .frame-type-news_categorylist .news ul .category_select-list.open + .category__list {
+    max-width: 100%;
   }
 }
 
@@ -848,7 +997,7 @@ body > header .navbar_container .menu .language_menu_container .language-menu a 
 .frame-type-news_categorylist .news ul li a {
   padding: 15px;
   width: auto;
-  color: #999;
+  color: #999999;
   font-family: "Pathway Gothic One";
   font-size: 30px;
   font-weight: 400;
@@ -871,4 +1020,126 @@ body > header .navbar_container .menu .language_menu_container .language-menu a 
       -ms-flex-pack: justify;
           justify-content: space-between;
   max-width: 100%;
+}
+
+.frame-type-site_contactme {
+  overflow: hidden;
+  padding: 70px 0;
+  background-color: #f5f8fb;
+  margin-bottom: 110px;
+}
+
+.frame-type-site_contactme header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+@media (min-width: 992px) {
+  .frame-type-site_contactme header .headline-block {
+    margin-bottom: 35px;
+  }
+}
+
+.frame-type-site_contactme header h2 {
+  font-family: "Pathway Gothic One";
+  font-weight: 400;
+  font-size: 42px;
+  margin-bottom: 25px;
+}
+
+.frame-type-site_contactme header h3 {
+  font-weight: 300;
+  font-size: 38px;
+}
+
+.frame-type-site_contactme .contactMe__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.frame-type-site_contactme .contactMe__list .contact__box {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  width: 25%;
+}
+
+@media screen and (max-width: 992px) {
+  .frame-type-site_contactme .contactMe__list .contact__box {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .frame-type-site_contactme .contactMe__list .contact__box {
+    width: 100%;
+  }
+}
+
+.frame-type-site_contactme .contactMe__list .contact__box .contact__content {
+  padding: 0 15px 0 15px;
+  border-radius: .5rem;
+}
+
+.frame-type-site_contactme .contactMe__list .contact__box .contact__content .content-box {
+  background-color: #ffffff;
+  padding: 20px 10px;
+  text-align: center;
+  -webkit-box-shadow: 0 4px 6px rgba(174, 190, 205, 0.3);
+          box-shadow: 0 4px 6px rgba(174, 190, 205, 0.3);
+}
+
+@media screen and (max-width: 992px) {
+  .frame-type-site_contactme .contactMe__list .contact__box .contact__content .content-box {
+    margin-bottom: 15px;
+  }
+}
+
+.frame-type-site_contactme .contactMe__list .contact__box .contact__content .content-box .contact__icons {
+  background-color: #04b4e0;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+}
+
+.frame-type-site_contactme .contactMe__list .contact__box .contact__content .content-box .contact__icons .icons {
+  width: 33px;
+  height: 33px;
+}
+
+.frame-type-site_contactme .contactMe__list .contact__box .contact__content .content-box .contact__title {
+  margin-top: 15px;
+}
+
+.frame-type-site_contactme .contactMe__list .contact__box .contact__content .content-box .contact__title a {
+  color: #333333;
+  font-family: "Pathway Gothic One";
+  font-size: 18px;
+}
+
+.frame-type-news_newsliststicky header h1 {
+  font-family: "Pathway Gothic One";
+  text-align: center;
+  font-weight: 400;
+  font-size: 42px;
+  margin-bottom: 70px;
 }
