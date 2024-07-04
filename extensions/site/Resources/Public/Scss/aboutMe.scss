@@ -69,12 +69,12 @@
                         border-radius: 5px;
                         background-origin: border-box;
                         background-clip: content-box, border-box;
-                        background-image: linear-gradient(to right, $color_4 0%, $color_6 100%), radial-gradient(circle at top left, $color_4, $color_6);
+                        background-color: $color_7;
                         border: double 2px transparent;
-                        box-shadow: 0px 10px 30px rgba(118, 85, 225, 0.3);
+                    
                         &:hover{
                             background-image: linear-gradient(#ffffff, #ffffff), radial-gradient(circle at top left, $color_4, $color_6);
-                            border: 2px solid $color_6;;
+                            border: 2px solid $color_7;
                             color: $color_4;
                             box-shadow: none;
                             background-clip: border-box;

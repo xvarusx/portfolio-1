@@ -56,7 +56,8 @@ body>header{
                         width: 44px;
                         height: 44px;
                         line-height: 44px;
-                        background-image: linear-gradient(to right, #4458dc 0%, #854fee 100%), radial-gradient(circle at top left, #4458dc, #854fee);
+                        // background-image: linear-gradient(to right, #4458dc 0%, #854fee 100%), radial-gradient(circle at top left, #4458dc, #854fee);
+                        background-color: $color_7;
                         border-radius: 100px;
                         text-align: center;
                         color: #fff;
@@ -88,7 +89,7 @@ body>header{
                                 width: 30px;
                                 height: 3px;
                                 margin: 6px;
-                                background: $color_3;
+                                background: $color_7;
                                 // position: absolute;
                                 transform: rotate(0deg);
                                 transition: 0.25s ease-in-out;
@@ -189,7 +190,7 @@ body>header{
                                     left: 0;
                                     width: 100%;
                                     height: 3px;
-                                    background:$color_3;
+                                    background:$color_7;
                                     transform: scaleX(0);
                                     transform-origin: right;
                                     transition: transform 0.5s;
