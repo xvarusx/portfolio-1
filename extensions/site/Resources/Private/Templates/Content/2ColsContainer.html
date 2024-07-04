@@ -1,0 +1,58 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+    xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+    xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers">
+    <f:layout name="Page/Default" />
+
+<f:section name="Configuration">
+    <flux:form id="2colomns_ontainer" label="2 Colomns Container" description="Content for 2 Colomns Container">
+        <flux:form.option name="options">
+            <flux:form.option.group value="container" />
+            <flux:form.option.icon
+                value="EXT:site/Resources/Public/Icons/container_2.3.6.svg" />
+        </flux:form.option>
+
+    </flux:form>
+    <flux:grid>
+        <f:comment>
+            Hauptbereich ist immer colPos=0
+
+            +---+-------+---+
+            | 1 | 2 | 3 |
+            +---+-------+---+
+            | 4 | 0 | 5 |
+            +---+-------+---+
+            | 6 | 7 | 8 |
+            +---+-------+---+
+        </f:comment>
+        <flux:grid.row>
+            <flux:grid.column colPos="6" colspan="1" name="left" label="left">
+            </flux:grid.column>
+
+            <flux:grid.column colPos="7" colspan="1" name="right" label="right">
+            </flux:grid.column>
+
+        </flux:grid.row>
+    </flux:grid>
+</f:section>
+
+<f:section name="Preview"> </f:section>
+<f:section name="Main">
+    <v:variable.set name="contentElementsLeft" value="{flux:content.get(area:'left',  render:'FALSE')}" />
+    <v:variable.set name="contentElementsright" value="{flux:content.get(area:'right',  render:'FALSE')}" />
+    <div class="mx-5 mt-4 py-3 position-relative">
+        <div class="row  mt-5 p-4 mt-4 d-flex align-items-end">
+            <div class="col-4">
+                <f:for each="{contentElementsLeft}" as="contentElementLeft">
+                    <v:content.render contentUids="{0:contentElementLeft.uid}" />
+                </f:for>
+            </div>
+            <div class="col-4">
+                <f:for each="{contentElementsright}" as="contentElementright">
+                    <v:content.render contentUids="{0:contentElementright.uid}" />
+                </f:for>
+            </div>
+        </div>
+    </div>
+</f:section>
+
+</html>

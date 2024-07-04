@@ -1,0 +1,90 @@
+#AboutMeSection{
+    background-color: #f5f8fb;
+    .aboutMe{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: center !important;
+        margin-right: -15px;
+        margin-left: -15px;
+        &__image{
+            flex: 0 0 50%;
+            max-width: 50%;
+            @media screen and (max-width: map-get($devices-breakpoints,sm)) {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+        &__text{
+            flex: 0 0 50%;
+            max-width: 50%;
+            @media screen and (max-width: map-get($devices-breakpoints,sm)) {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            &-container{
+                margin-bottom: 0;
+                    position: relative;
+                    width: 100%;
+                    min-height: 1px;
+                    padding-right: 15px;
+                    padding-left: 15px;
+                    h2{
+                        @media(max-width: map-get($devices-breakpoints,sm)){
+                            text-align: center; 
+                        }
+                       
+                        font-size: 36px;
+                        font-weight: 700;
+                        margin-bottom: 15px;
+                        line-height: 50px;
+                        text-transform: uppercase;
+                    }
+                    p{
+                        font-family: $font_2;
+                        font-size: 18px;
+                        line-height: 1.5;
+                        color: $color_4;
+                        margin-bottom: 20px;
+                    }
+                    .primary_btn {
+                        @media screen and (max-width: map-get($devices-breakpoints,sm)) {
+                            width: 100%;
+                        }
+                        display: inline-block;
+                        color: $color_1;
+                        letter-spacing: 0px;
+                        font-family: $font_2, sans-serif;
+                        font-weight: 600;
+                        font-size: 16px;
+                        line-height: 46px;
+                        outline: none !important;
+                        text-align: center;
+                        cursor: pointer;
+                        text-transform: uppercase;
+                        border-radius: 5px;
+                        background-origin: border-box;
+                        background-clip: content-box, border-box;
+                        background-image: linear-gradient(to right, $color_4 0%, $color_6 100%), radial-gradient(circle at top left, $color_4, $color_6);
+                        border: double 2px transparent;
+                        box-shadow: 0px 10px 30px rgba(118, 85, 225, 0.3);
+                        &:hover{
+                            background-image: linear-gradient(#ffffff, #ffffff), radial-gradient(circle at top left, $color_4, $color_6);
+                            border: 2px solid $color_6;;
+                            color: $color_4;
+                            box-shadow: none;
+                            background-clip: border-box;
+                        }
+                        span{
+                            padding: 0 42px;
+                        }
+                    }
+            }
+
+        }
+    }
+}
