@@ -1218,3 +1218,107 @@ body > header .navbar_container .menu .language_menu_container .language-menu a 
   color: #999999;
   line-height: 35px;
 }
+
+footer {
+  background-color: black;
+  color: #ffffff;
+  font-family: "Open Sans";
+  padding: 5rem 0;
+}
+
+footer a {
+  color: #ffffff;
+}
+
+footer .footer__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+footer .footer__box-content {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  width: 25%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media screen and (max-width: 992px) {
+  footer .footer__box-content {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  footer .footer__box-content {
+    width: 100%;
+  }
+}
+
+footer .footer__box-content .footer-social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+footer .footer__box-content .footer-social li {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  margin: 0 15px 15px 0;
+}
+
+footer .footer__box-content .footer-social li img {
+  width: 35px;
+  height: auto;
+}
+
+footer .footer__box-content .footer-social li:hover {
+  -webkit-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+
+footer .footer__box-content h3 {
+  margin-bottom: 20px;
+}
+
+footer .footer__box-content .pages_links li {
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+footer .footer__box-content .pages_links li a::before {
+  content: "\27BC";
+  color: #04b4e0;
+}
+
+footer .footer__box-content .contact-links li {
+  margin-bottom: 1rem;
+}
+
+footer .footer__box-content .contact-links .contact-address::before {
+  content: "\2616";
+  color: #04b4e0;
+}
+
+footer .footer__box-content .contact-links .contact-tel::before {
+  content: "\260F";
+  color: #04b4e0;
+}
+
+footer .footer__box-content .contact-links .contact-email::before {
+  content: "\2709";
+  color: #04b4e0;
+}

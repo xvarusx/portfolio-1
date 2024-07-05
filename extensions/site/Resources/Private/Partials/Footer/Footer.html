@@ -1,0 +1,42 @@
+    <div class="container">
+        <div class="footer__box">
+            <div class="footer__box-content copyright">
+                <p class="copyright-text">Copyright ©<script>document.write(new Date().getFullYear());</script> All rights reserved | This web site is made by Oussema Harrabi</a></p>
+            </div>
+            <div class="footer__box-content">
+                <ul class=" footer-link contact-links">
+                    <li class=""><span class="contact-address"></span> {settings.contact.address}</li>
+                    <li class=""><span class="contact-tel"></span><a href="tel:{settings.contact.tel}" class="contact_details"> {settings.contact.tel}</a> </li>
+                    <li class=""><span class="contact-email"></span><a href="mailto:{settings.contact.email}" target="_blank" class="contact_details"> oussema@harrabi.com</a></li>
+                </ul>
+            </div>
+            <div class="footer__box-content">
+                <h3>Quick Links</h3>
+                <ul class=" footer-link pages_links">
+                    <v:menu as="menu" pageUid="{settings.uids.HeaderMenu}">     
+                        <f:for each="{menu}" as="mainnavigationItem">
+                            <li>
+                                <a href="{mainnavigationItem.link}" target="{mainnavigationItem.target}" title="{mainnavigationItem.title}">
+                                    {mainnavigationItem.title}
+                                </a>
+                            </li>
+                        </f:for>
+                    </v:menu>
+                </ul>
+            </div>
+            <div class="footer__box-content">
+                <h3>Social</h3>
+                <ul class=" footer-link footer-social">
+                    <v:content.resources.fal table="tt_content" field="image" uid="{settings.uids.SocialMediaIcons}" as="SocialMediaIcons">
+                        <f:for each="{SocialMediaIcons}" as="icons">
+                            <li>
+                                <f:link.external uri="{icons.link}" target="_blank">
+                                    <f:image src="{icons.url}" alt="{icon.alternative}" width="25" height="25" />
+                                </f:link.external>
+                            </li>   
+                        </f:for>
+                    </v:content.resources.fal>
+                </ul>
+            </div>
+        </div>
+    </div>

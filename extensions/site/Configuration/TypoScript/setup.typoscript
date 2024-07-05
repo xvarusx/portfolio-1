@@ -197,11 +197,12 @@ plugin.tx_site {
     settings {
         uids {
             HeaderMenu = 1 
+            SocialMediaIcons = 13
         }
         contact {
-            phone = +216 54876671
+            tel = +216 54 876 671
             email = oussema.harrabi.pro@hotmail.com
-            address = sfax, Tunisia 
+            address = Tunisia 
         }
     }
 }
