@@ -155,7 +155,7 @@ return [
     ],
     'GFX' => [
         'processor' => 'ImageMagick',
-        'processor_allowTemporaryMasksAsPng' => 0,
+        'processor_allowTemporaryMasksAsPng' => '0',
         'processor_colorspace' => 'RGB',
         'processor_effects' => false,
         'processor_enabled' => '1',
@@ -178,11 +178,12 @@ return [
     ],
     'MAIL' => [
         'transport' => 'sendmail',
-        'transport_sendmail_command' => '',
+        'transport_sendmail_command' => 'C:/laragon/bin/sendmail/sendmail.exe -t',
         'transport_smtp_encrypt' => '',
         'transport_smtp_password' => '',
         'transport_smtp_server' => '',
         'transport_smtp_username' => '',
+        'defaultMailFromAddress' =>'',
     ],
     'SYS' => [
         'UTF8filesystem' => true,
