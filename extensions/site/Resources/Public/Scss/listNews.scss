@@ -1,13 +1,12 @@
 .frame-type-news_newsliststicky{
-    margin-top: 70px;
+    padding-top: 120px;
     overflow: hidden;
-    margin-bottom: 110px;
+    // margin-bottom: 110px;
     .news-header{
         text-align: center;
         font-family: $font;
         font-size: 42px;
         line-height: 42px;
-        font-weight: 400;
         color: $color_4;
         margin-bottom:48px ;
     }
@@ -19,6 +18,7 @@
         margin: 0 auto;
         margin: 0 auto;
         background-color: $color_1;
+
         .filter_container{
             display: flex;
             justify-content: center;

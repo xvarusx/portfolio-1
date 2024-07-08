@@ -1,6 +1,4 @@
 <?php
-
-use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 defined('TYPO3') or die('Access denied.');
 /***************
  * Add default RTE configuration
@@ -22,3 +20,5 @@ $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['site'] = 'EXT:site/Configuration/
  * extend RTE configuration
  */
 $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['cke'] = 'EXT:site/Configuration/RTE/Default.yaml';
+
+

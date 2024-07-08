@@ -9,32 +9,43 @@
 
 <f:section name="content">
 	<!--TYPO3SEARCH_end-->
+	{f:variable(name: 'newsType', value: 'projects')}
+	
+	<f:switch expression="{settings.startingpoint}">
+		<f:case value="16">{f:variable(name: 'newsType', value: 'services')} </f:case>
+		<f:case value="8">{f:variable(name: 'newsType', value: 'blog')} {f:variable(name: 'loader', value: '<div class="loader hide"></div>')} </f:case>
+		<f:defaultCase>{f:variable(name: 'newsType', value: 'projects')} </f:defaultCase>
+	</f:switch>
 	<f:if condition="{news}">
 		<f:then>
-			<div class="news-list-view" id="news-container-{contentObjectData.uid}">
+			
+			
+			<div class="news-list-view {newsType}" id="news-container-{contentObjectData.uid}">
 				<f:if condition="{settings.hidePagination}">
 					<f:then>
 						<f:for each="{news}" as="newsItem" iteration="iterator">
-							<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+							<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator,newsType:newsType}" />
 						</f:for>
 					</f:then>
 					<f:else>
                         <f:if condition="{settings.list.paginate.insertAbove}">
-                            <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
+                            <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator,newsType:newsType}" />
                         </f:if>
                         <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
-                            <f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                            <f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator,newsType:newsType}" />
                         </f:for>
                         <f:if condition="{settings.list.paginate.insertBelow}">
-                            <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
+                            <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator,newsType:newsType}" />
                         </f:if>
 					</f:else>
 				</f:if>
 			</div>
 		</f:then>
 		<f:else>
-			<div class="no-news-found">
-				<f:translate key="list_nonewsfound" />
+			<div class="news-list-view {newsType}">
+				<div class="no-news-found">
+					<f:translate key="list_nonewsfound" />
+				</div>
 			</div>
 		</f:else>
 	</f:if>

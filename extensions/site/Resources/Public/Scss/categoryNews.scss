@@ -1,19 +1,34 @@
 .frame-type-news_categorylist {
-    margin-top: 110px;
-    margin-bottom: 70px;
+padding-top: 120px;
     header {
         h1{
             font-family: $font;
             text-align: center;
-            font-weight: 400;
             font-size: 42px;
             margin-bottom: 70px;
         }
+    }
+    .loader {
+        position: relative;
+        left: 50%;
+        bottom: -200px;
+        width: 50px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: 
+        radial-gradient(farthest-side,$color_7 94%,#0000) top/8px 8px no-repeat,
+        conic-gradient(#0000 30%,$color_7);
+        -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+        animation: l13 1s infinite linear;
+    }
+    @keyframes l13{ 
+        100%{transform: rotate(1turn)}
     }
     .news{
         @media(max-width: map-get($devices-breakpoints,xl)){
             border-bottom:none;
         }
+
         ul{
             padding-left: 15px;
             .category_select-list {
@@ -108,7 +123,7 @@
                     color: $color_5;
                     font-family: "Pathway Gothic One";
                     font-size: 30px;
-                    font-weight: 400;
+                    text-transform: uppercase;
                 }
                 ul{
                     display: flex;
