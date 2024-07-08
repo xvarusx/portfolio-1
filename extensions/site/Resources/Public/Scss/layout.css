@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: Pathway Gothic One;
   font-style: normal;
@@ -322,16 +323,14 @@ body > header .navbar_container .menu .language_menu_container .language-menu a 
 }
 
 .frame-type-news_newsliststicky {
-  margin-top: 70px;
+  padding-top: 120px;
   overflow: hidden;
-  margin-bottom: 110px;
 }
 .frame-type-news_newsliststicky .news-header {
   text-align: center;
   font-family: "Pathway Gothic One";
   font-size: 42px;
   line-height: 42px;
-  font-weight: 400;
   color: #333333;
   margin-bottom: 48px;
 }
@@ -586,15 +585,29 @@ body > header .navbar_container .menu .language_menu_container .language-menu a 
 }
 
 .frame-type-news_categorylist {
-  margin-top: 110px;
-  margin-bottom: 70px;
+  padding-top: 120px;
 }
 .frame-type-news_categorylist header h1 {
   font-family: "Pathway Gothic One";
   text-align: center;
-  font-weight: 400;
   font-size: 42px;
   margin-bottom: 70px;
+}
+.frame-type-news_categorylist .loader {
+  position: relative;
+  left: 50%;
+  bottom: -200px;
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side, #04b4e0 94%, rgba(0, 0, 0, 0)) top/8px 8px no-repeat, conic-gradient(rgba(0, 0, 0, 0) 30%, #04b4e0);
+  -webkit-mask: radial-gradient(farthest-side, rgba(0, 0, 0, 0) calc(100% - 8px), #000 0);
+  animation: l13 1s infinite linear;
+}
+@keyframes l13 {
+  100% {
+    transform: rotate(1turn);
+  }
 }
 @media (max-width: 1200px) {
   .frame-type-news_categorylist .news {
@@ -701,7 +714,7 @@ body > header .navbar_container .menu .language_menu_container .language-menu a 
   color: #999999;
   font-family: "Pathway Gothic One";
   font-size: 30px;
-  font-weight: 400;
+  text-transform: uppercase;
 }
 .frame-type-news_categorylist .news ul li ul {
   display: flex;
@@ -715,9 +728,8 @@ body > header .navbar_container .menu .language_menu_container .language-menu a 
 
 .frame-type-site_contactme {
   overflow: hidden;
-  padding: 70px 0;
+  padding: 120px 0;
   background-color: #f5f8fb;
-  margin-bottom: 110px;
 }
 .frame-type-site_contactme header {
   text-align: center;
@@ -730,13 +742,13 @@ body > header .navbar_container .menu .language_menu_container .language-menu a 
 }
 .frame-type-site_contactme header h2 {
   font-family: "Pathway Gothic One";
-  font-weight: 400;
-  font-size: 42px;
+  font-size: 46px;
   margin-bottom: 25px;
 }
 .frame-type-site_contactme header h3 {
   font-weight: 300;
-  font-size: 38px;
+  font-size: 26px;
+  color: #999999;
 }
 .frame-type-site_contactme .contactMe__list {
   display: flex;
@@ -768,7 +780,7 @@ body > header .navbar_container .menu .language_menu_container .language-menu a 
 }
 @media screen and (max-width: 992px) {
   .frame-type-site_contactme .contactMe__list .contact__box .contact__content .content-box {
-    margin-bottom: 15px;
+    margin-bottom: 35px;
   }
 }
 .frame-type-site_contactme .contactMe__list .contact__box .contact__content .content-box .contact__icons {
@@ -798,14 +810,10 @@ body > header .navbar_container .menu .language_menu_container .language-menu a 
 .frame-type-news_newsliststicky header h1 {
   font-family: "Pathway Gothic One";
   text-align: center;
-  font-weight: 400;
   font-size: 42px;
   margin-bottom: 70px;
 }
 
-.frame-type-news_newsliststicky {
-  padding-top: 15px;
-}
 .frame-type-news_newsliststicky .service {
   flex: 0 0 auto;
   width: 33.3333%;
@@ -860,4 +868,93 @@ body > header .navbar_container .menu .language_menu_container .language-menu a 
   font-weight: 400;
   color: #999999;
   line-height: 35px;
+}
+
+.frame-type-powermail_pi1 header {
+  text-align: center;
+}
+.frame-type-powermail_pi1 header h1 {
+  font-family: "Pathway Gothic One";
+  font-size: 46px;
+  text-transform: uppercase;
+  color: #333333;
+}
+.frame-type-powermail_pi1 header h2 {
+  font-family: "Pathway Gothic One";
+  font-size: 26px;
+  text-transform: uppercase;
+  color: #999999;
+}
+
+footer {
+  background-color: black;
+  color: #ffffff;
+  font-family: "Open Sans";
+  padding: 5rem 0;
+}
+footer a {
+  color: #ffffff;
+}
+footer .footer__box {
+  display: flex;
+  flex-flow: row wrap;
+}
+footer .footer__box-content {
+  flex: 0 0 auto;
+  width: 25%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+@media screen and (max-width: 992px) {
+  footer .footer__box-content {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 576px) {
+  footer .footer__box-content {
+    width: 100%;
+  }
+}
+footer .footer__box-content .footer-social {
+  display: flex;
+  flex-flow: row wrap;
+}
+footer .footer__box-content .footer-social li {
+  transition: all 0.3s ease 0s;
+  margin: 0 15px 15px 0;
+}
+footer .footer__box-content .footer-social li img {
+  width: 35px;
+  height: auto;
+}
+footer .footer__box-content .footer-social li:hover {
+  transform: translateY(-5px);
+}
+footer .footer__box-content h3 {
+  margin-bottom: 20px;
+}
+footer .footer__box-content .pages_links li {
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+footer .footer__box-content .pages_links li a::before {
+  content: "➼";
+  color: #04b4e0;
+}
+footer .footer__box-content .contact-links li {
+  margin-bottom: 1rem;
+}
+footer .footer__box-content .contact-links .contact-address::before {
+  content: "☖";
+  color: #04b4e0;
+}
+footer .footer__box-content .contact-links .contact-tel::before {
+  content: "☏";
+  color: #04b4e0;
+}
+footer .footer__box-content .contact-links .contact-email::before {
+  content: "✉";
+  color: #04b4e0;
 }/*# sourceMappingURL=layout.css.map */

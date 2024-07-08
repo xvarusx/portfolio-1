@@ -224,3 +224,23 @@ plugin.tx_news {
 		}
 	}
 }
+plugin.tx_powermail {
+  view {
+    templateRootPaths {
+      10 = EXT:site/Resources/Private/Extensions/PowerMail/Templates/
+    }
+
+    partialRootPaths {
+       10 = EXT:site/Resources/Private/Extensions/PowerMail/Partials/
+    }
+
+    layoutRootPaths {
+      10 = EXT:site/Resources/Private/Extensions/PowerMail/Layouts/
+    }
+  }
+  settings{
+    css{
+        customClass = contact-form
+    }
+  }
+}
